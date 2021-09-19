@@ -2,8 +2,8 @@
 
 calculation = input("Would you like to add, subtract, divide or multiply?\n")
 
-numa = int(input("First Number: "))
-numb = int(input("Second Number: "))
+numa = float(input("First Number: "))
+numb = float(input("Second Number: "))
 
 def add(num1, num2):
 	add = num1 + num2
@@ -35,7 +35,7 @@ print(numa)
 again = input("Continue or end?\n").title()
 while again == "Continue":
 	calculation = input("Would you like to add, subtract, divide or multiply?\n")
-	numb = int(input("next number: "))
+	numb = float(input("next number: "))
 	numa = calculate(operation = calculation)
 	print(numa)
 	again = input("Continue or end?\n").title()
