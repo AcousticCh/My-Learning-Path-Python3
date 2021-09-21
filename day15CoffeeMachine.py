@@ -3,6 +3,7 @@ MENU = {
     "espresso": {
         "ingredients": {
             "water": 50,
+            "milk": 0,
             "coffee": 18,
         },
         "cost": 1.5,
@@ -77,19 +78,19 @@ while off == "False":
 		resources["coffee"] -= needed_coffee
 		if resources["water"] <= 0:
 			print(f"Insufficient water")
-			off = "True"
-			print(f"Returning: ${paid}\n have a nice day!")
-			break
+			
+			print(f"Returning: ${paid}")
+			continue
 		if resources["milk"] <= 0:
 			print(f"Insufficient milk")
-			off = "True"
-			print(f"Returning: ${paid}\n have a nice day!")
-			break
+			
+			print(f"Returning: ${paid}")
+			continue
 		if resources["coffee"] <= 0:
 			print(f"Insufficient coffee")
-			off = "True"
-			print(f"Returning: ${paid}\n have a nice day!")
-			break
+			
+			print(f"Returning: ${paid}")
+			continue
 	else:
 		print(f"Insufficient funds, Refunding ${paid}")
 		off = "True"	
@@ -97,8 +98,3 @@ while off == "False":
 	change_print = "{:.2f}".format(change)
 	print(f"Here is your change: ${change_print}")
 	print(f"Here is your {selected_drink} have a nice day!")
-
-
-
-
-#make report and off options
