@@ -25,15 +25,27 @@ class Snake:
 		self.segment[0].forward(DISTANCE)
 		
 	def move_left(self):
-		self.segment[0].seth(180)
+		if self.segment[0].heading() == 0:
+			pass
+		else:
+			self.segment[0].seth(180)
 		
 	def move_right(self):
-		self.segment[0].seth(0)
+		if self.segment[0].heading() == 180:
+			pass
+		else:
+			self.segment[0].seth(0)
 	
 	def move_up(self):
-		self.segment[0].seth(90)
+		if self.segment[0].heading() == 270:
+			pass
+		else:
+			self.segment[0].seth(90)
 		
 	def move_down(self):
-		self.segment[0].seth(270)
+		if self.segment[0].heading() == 90:
+			pass
+		else:
+			self.segment[0].seth(270)
 		
 	
