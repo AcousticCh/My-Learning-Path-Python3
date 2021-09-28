@@ -10,13 +10,7 @@ class Snake:
 
 	def create_snake(self):
 		for position in STARTING_POSITIONS:
-			pen = Turtle()
-			pen.shape("square")
-			pen.color("white")
-			pen.penup()
-			pen.goto(position)
-			self.segment.append(pen)
-		
+			self.add_seg(position)
 	def move(self):
 		for seg_num in range(len(self.segment) - 1, 0, -1):
 			new_x = self.segment[seg_num -1].xcor()
@@ -47,5 +41,16 @@ class Snake:
 			pass
 		else:
 			self.segment[0].seth(270)
-		
 	
+	def add_seg(self, position):
+		"""create segment to add"""
+		pen = Turtle()
+		pen.shape("square")
+		pen.color("white")
+		pen.penup()
+		pen.goto(position)
+		self.segment.append(pen)
+			
+	def extend(self):
+		"""add segment to snake"""
+		self.add_seg(self.segment[-1].position())
