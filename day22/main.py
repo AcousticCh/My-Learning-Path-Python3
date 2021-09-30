@@ -9,8 +9,9 @@ from random import randint
 first_score_pos = -50
 second_score_pos = 40
 BACKGROUND_COLOR = "#000000"
+LINE_COLOR = "#FFFFFF"
 
-def setup_background(bgcolor):
+def setup_background(bgcolor, lcolor):
 	screen = Screen()
 	screen.setup(width = 800, height = 600)
 	screen.bgcolor(bgcolor)
@@ -18,7 +19,7 @@ def setup_background(bgcolor):
 	background_pen = Turtle()
 	background_pen.speed(0)
 	background_pen.ht()
-	background_pen.pencolor("#FFFFFF")
+	background_pen.pencolor(lcolor)
 	background_pen.width(5)
 	background_pen.penup()
 	background_pen.setheading(90)
@@ -36,7 +37,7 @@ def setup_background(bgcolor):
 	return screen
 	
 	
-screen = setup_background(BACKGROUND_COLOR)
+screen = setup_background(bgcolor = BACKGROUND_COLOR, lcolor = LINE_COLOR)
 player1 = Paddle()
 player2 = Paddle()
 ball = Ball()

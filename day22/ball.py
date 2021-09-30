@@ -6,7 +6,7 @@ bounce_down_to_right = randint(270, 360)
 bounce_down_to_left = randint(180, 270)
 bounce_up_to_right = randint(0, 90)
 bounce_up_to_left = randint(90, 180)
-MOVEMENT_GAP = 20
+
 class Ball(Turtle):
 	def __init__(self):
 		super().__init__()
@@ -15,7 +15,7 @@ class Ball(Turtle):
 		self.shapesize(stretch_len = 1, stretch_wid = 1)
 		self.color("#00FF00")
 		self.speed(0)
-		
+		self.MOVEMENT_GAP = 10
 
 	def start_ball(self):
 		self.goto(0, 0)
@@ -23,7 +23,7 @@ class Ball(Turtle):
 		
 		
 	def ball_move(self):
-		self.forward(MOVEMENT_GAP)
+		self.forward(self.MOVEMENT_GAP)
 		
 		
 	def bounce(self):
@@ -47,13 +47,17 @@ class Ball(Turtle):
 		if self.xcor() > 365 and self.distance(paddle) < 51:
 			if self.heading() > 0 and self.heading() < 90:
 				self.seth(b1)
+				self.MOVEMENT_GAP += 1
 			elif self.heading() > 270 and self.heading() < 360:
 				self.seth(b2)
+				self.MOVEMENT_GAP += 1
 		elif self.xcor() < -370 and self.distance(paddle) < 51:
 			if self.heading() > 90 and self.heading() < 180:
 				self.seth(b3)
+				self.MOVEMENT_GAP += 1
 			elif self.heading() > 180 and self.heading() < 270:
 				self.seth(b4)
+				self.MOVEMENT_GAP += 1
 		
 	def miss(self):
 		if self.xcor() >= 400:
